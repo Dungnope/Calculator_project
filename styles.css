@@ -1,0 +1,93 @@
+:root{
+    --fix_width: 117px;
+}
+
+@font-face {
+    font-family: 'Digital-7';
+    src: url(./src/Fonts/digital-7.ttf);
+    font-style: normal;
+    font-weight: 200;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+.container {
+    width: 618px;
+    margin: auto;
+}
+
+.container__display{
+    width: 618px;
+    height: 264px;
+    border-radius: 8px 8px 0 0;
+    background-color: #abb2a8;
+    border: 30px solid black;
+    font-family: 'Digital-7';
+    font-size: 100px;
+    position: relative;
+}
+
+.container__display span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: 'Digital-7', 'Times New Roman', Times, serif;
+}
+.container__caculate{
+    width: 618px;
+    height: 567px;
+    background-color:#dcd6ca;
+    border-radius: 0 0 40px 40px;
+    padding: 24px;
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.number, .operator, .delete, .operator--result{
+    display: block;
+    border: none;
+    height: 120px;
+   font-size: 72px;
+}
+
+.number {
+   background-color: black;
+   color: white;
+   flex-basis: 117px;
+}
+.operator, .operator--result {
+    color: white;
+    background-color: #958377;
+    flex: 2 0 25%;
+    text-align: center;
+    line-height: 120px;
+}
+
+.operator--half {
+    flex-basis: 91px;
+    font-size: 40px;
+}
+
+.operator:last-child{
+    border-bottom-right-radius: 40px;
+}
+.delete {
+    border-bottom-left-radius: 40px;
+    background-color: #f0b662;
+    flex-basis: 117px;
+}
+button:click{
+    background-color: azure;;
+}

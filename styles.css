@@ -35,13 +35,29 @@ body {
     font-family: 'Digital-7';
     font-size: 100px;
     position: relative;
+    overflow: scroll;
+}
+
+.container__display::-webkit-scrollbar{
+    width: 100%;
+}
+
+/* Track */
+
+.container__display::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.container__display::-webkit-scrollbar-track{
+    background-color: transparent;
 }
 
 .container__display span {
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     font-family: 'Digital-7', 'Times New Roman', Times, serif;
+    overflow-wrap: break-word;
 }
 .container__caculate{
     width: 618px;
@@ -60,6 +76,7 @@ body {
     border: none;
     height: 120px;
    font-size: 72px;
+   border-radius: 20px;
 }
 
 .number {
@@ -87,7 +104,9 @@ body {
     border-bottom-left-radius: 40px;
     background-color: #f0b662;
     flex-basis: 117px;
+    font-size: 50px;
 }
-button:click{
-    background-color: azure;;
+button:active{
+    background-color: rgb(94, 100, 100);
+    box-shadow: rgba(0, 0, 0, 0.16) 7px 10px 0px 0px;
 }

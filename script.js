@@ -1,8 +1,24 @@
 const displayCal = document.querySelector(".container__display");
 const Button = document.querySelectorAll("button");
-const Content = document.getElementsByTagName("span");
-
+const show = document.createElement("span");
 let first = "", second = "", operator = "";
+window.addEventListener("keydown", (e) => {
+    const deletewrongtype = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if(operator !== "" && second !== "")
+    {
+        show.textContent = show.textContent.slice(0, show.textContent.length - 1);
+        second = second.slice(0, second.length - 1);
+    }
+    else if(operator !== "" && second === "")
+    {
+        show.textContent = show.textContent.slice(0, show.textContent.length - 1);
+        operator = "";
+    }
+    else{
+        show.textContent = show.textContent.slice(0, show.textContent.length - 1);
+        first = first.toString().slice(0, first.length - 1);
+    } 
+})
 Button.forEach(e => {
     e.addEventListener("click", (event) => {
         if(e.matches(".number"))
@@ -13,14 +29,33 @@ Button.forEach(e => {
                 if(typeof(first) == "number")
                 {
                     first = ""
-                    displayCal.textContent = "";
+                    show.textContent = "";
                 }
-                first += e.innerText;
-                displayCal.textContent += e.innerText;
+
+                if(e.innerText === "." && !first.includes("."))
+                {
+                    first += e.innerText;
+                    show.textContent += e.innerText;
+                }
+
+                if(e.innerText !== ".")
+                {
+                    first += e.innerText;
+                    show.textContent += e.innerText;
+                }
             }
             else {
-                second += e.innerText;
-                displayCal.textContent += e.innerText;
+                if(e.innerText === "." && !second.includes("."))
+                {
+                    second += e.innerText;
+                    show.textContent += e.innerText;
+                }
+
+                if(e.innerText !== ".")
+                {
+                    second += e.innerText;
+                    show.textContent += e.innerText;
+                }
             }
         }
         if(e.matches(".operator"))
@@ -29,31 +64,26 @@ Button.forEach(e => {
             if(operator === "" && first !== "")
             {
                 operator += e.innerText;
-                console.log(operator);
-                displayCal.textContent += e.innerText;
+                show.textContent += e.innerText;
             }
-            else{
-                first += e.innerText;
-                displayCal.textContent = first;
-            } 
         }
         if(e.matches(".delete"))
         {
-            displayCal.textContent = first = second = operator = "";
+            show.textContent = first = second = operator = "";
         }
 
         if(e.matches(".operator--result"))
         {
             if(first === "" && second === "" && operator === "")
             {
-                displayCal.textContent = "ERROR";
+                show.textContent = "ERROR";
             }
-            else{displayCal.textContent = operate(operator, first, second);;
+            else{show.textContent = operate(operator, first, second);;
             first = operate(operator, first, second);
             operator = "";
             second = "";}
         }
-
+        displayCal.appendChild(show);
     })
 })
 
@@ -106,8 +136,8 @@ function divide(a, b)
 }
 
 function error() {
-    if(displayCal.textContent === "ERROR")
+    if(show.textContent === "ERROR")
     {
-        displayCal.textContent = "";
+        show.textContent = "";
     }
 }

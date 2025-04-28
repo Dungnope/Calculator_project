@@ -4,6 +4,7 @@ const show = document.createElement("span");
 let first = "", second = "", operator = "";
 window.addEventListener("keydown", (e) => {
     const deletewrongtype = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if(!deletewrongtype) return;
     if(operator !== "" && second !== "")
     {
         show.textContent = show.textContent.slice(0, show.textContent.length - 1);

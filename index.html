@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -11,25 +11,27 @@
         <div class="container__display" data-key = "8">
         </div>
         <div class="container__caculate">
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button class="operator operator--half">*</button>
-            <button class="operator operator--half">/</button>
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
-            <button class="operator">-</button>
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
-            <button class="operator">+</button>
-            <button class="delete">AC</button>
-            <button class="number">0</button>
-            <button class="number">.</button>
-            <button class="operator--result">=</button>
+            <button class="number" data-key="103">7</button>
+            <button class="number" data-key="104">8</button>
+            <button class="number" data-key="105">9</button>
+            <button class="operator operator--half" data-key="106">*</button>
+            <button class="operator operator--half" data-key="111">/</button>
+            <button class="number" data-key="100">4</button>
+            <button class="number" data-key="101">5</button>
+            <button class="number" data-key="102">6</button>
+            <button class="operator" data-key="109">-</button>
+            <button class="number" data-key="97">1</button>
+            <button class="number" data-key="98">2</button>
+            <button class="number" data-key="99">3</button>
+            <button class="operator" data-key="107">+</button>
+            <button class="delete" data-key="27">AC</button>
+            <button class="number" data-key="96">0</button>
+            <button class="number" data-key="110">.</button>
+            <button class="operator--result" data-key="13">=</button>
+            <button name="undo_button" data-key="8" style="display: none;"></button>
         </div>
     </main>
     <script src="./script.js"></script>
+    <script src="./keyboardInput.js"></script>
 </body>
 </html>

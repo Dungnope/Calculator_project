@@ -2,24 +2,7 @@ const displayCal = document.querySelector(".container__display");
 const Button = document.querySelectorAll("button");
 const show = document.createElement("span");
 let first = "", second = "", operator = "";
-window.addEventListener("keydown", (e) => {
-    const deletewrongtype = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    if(!deletewrongtype) return;
-    if(operator !== "" && second !== "")
-    {
-        show.textContent = show.textContent.slice(0, show.textContent.length - 1);
-        second = second.slice(0, second.length - 1);
-    }
-    else if(operator !== "" && second === "")
-    {
-        show.textContent = show.textContent.slice(0, show.textContent.length - 1);
-        operator = "";
-    }
-    else{
-        show.textContent = show.textContent.slice(0, show.textContent.length - 1);
-        first = first.toString().slice(0, first.length - 1);
-    } 
-})
+
 Button.forEach(e => {
     e.addEventListener("click", (event) => {
         if(e.matches(".number"))
@@ -33,7 +16,7 @@ Button.forEach(e => {
                     show.textContent = "";
                 }
 
-                if(e.innerText === "." && !first.includes("."))
+                if(e.innerText === "." && !first.includes(".") && first !== "")
                 {
                     first += e.innerText;
                     show.textContent += e.innerText;
@@ -85,8 +68,11 @@ Button.forEach(e => {
             second = "";}
         }
         displayCal.appendChild(show);
+        e.classList.add("button__active");
     })
 })
+
+//Main operator function
 
 function operate(operator, a, b)
 {
@@ -109,7 +95,7 @@ function operate(operator, a, b)
             result =  multiply(a, b);
         }
         else  result = divide(a, b);
-        let ans = Number(result.toFixed(2));
+        let ans = Number(result);
         if(!Number.isInteger(result)) return ans;
         else return result;
     }

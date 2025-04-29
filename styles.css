@@ -58,6 +58,7 @@ body {
     right: 0;
     font-family: 'Digital-7', 'Times New Roman', Times, serif;
     overflow-wrap: break-word;
+    color: rgb(53, 53, 134);
 }
 .container__caculate{
     width: 618px;
@@ -106,7 +107,13 @@ body {
     flex-basis: 117px;
     font-size: 50px;
 }
-button:active{
+
+button {
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+}
+
+.button__active{
+    transform: scale(1.2, 1.2);
     background-color: rgb(94, 100, 100);
     box-shadow: rgba(0, 0, 0, 0.16) 7px 10px 0px 0px;
 }

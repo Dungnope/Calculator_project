@@ -5,8 +5,6 @@ Button.forEach(e => {
     })
 })
 
-
-
 window.addEventListener("keydown", (e) => {
     const deletewrongtype = document.querySelector(`button[data-key="${e.keyCode}"]`);
     if(!deletewrongtype) return;

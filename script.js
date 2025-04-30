@@ -65,10 +65,14 @@ Button.forEach(e => {
             else{show.textContent = operate(operator, first, second);;
             first = operate(operator, first, second);
             operator = "";
-            second = "";}
+            second = ""};
         }
         displayCal.appendChild(show);
         e.classList.add("button__active");
+        const audio = document.querySelector(`audio`);
+        if(!audio) return;
+        audio.currentTime = 0;
+        audio.play();
     })
 })
 

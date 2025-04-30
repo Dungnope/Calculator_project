@@ -1,13 +1,71 @@
-:root{
+:root {
     --fix_width: 117px;
+    --primary-color: #313233;
+    --secondary-color: #48494a;
+    --accent-color: #d0d1d4;
+    --background-color: #48494a;
+    --text-color: #fff;
+    --text-dark-color: #000;
+    --link-color: #007bff;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --selected-color: #48494a;
+    --hr-top-color: #333334;
+    --hr-bottom-color: #5a5b5c;
+    --btn-primary-inner-color: #3c8527;
+    --btn-primary-inner-hover-color: #2a641c;
+    --btn-primary-inner-shadow-color: #1d4d13;
+    --btn-primary-border-color: #1e1e1f;
+    --btn-primary-inner-border-lt-color: #4f913cbf;
+    --btn-primary-inner-border-br-color: #639d52;
+    --btn-primary-text-color: #fff;
+    --btn-secondary-inner-color: #7345e5;
+    --btn-secondary-inner-hover-color: #5d2cc6;
+    --btn-secondary-inner-shadow-color: #4a1cac;
+    --btn-secondary-border-color: #1e1e1f;
+    --btn-secondary-inner-border-lt-color: #a264f2bf;
+    --btn-secondary-inner-border-br-color: #8e49eb;
+    --btn-secondary-text-color: #fff;
+    --btn-tertiary-inner-color: #d0d1d4;
+    --btn-tertiary-inner-hover-color: #b1b2b5;
+    --btn-tertiary-inner-shadow-color: #58585a;
+    --btn-tertiary-border-color: #1e1e1f;
+    --btn-tertiary-inner-border-lt-color: #ecedeebf;
+    --btn-tertiary-inner-border-br-color: #e3e3e5;
+    --btn-tertiary-text-color: #000;
+    --btn-normal-inner-color: #c6c6c6;
+    --btn-normal-border-color: #131313;
+    --btn-normal-inner-border-lt-color: #f7f7f7bf;
+    --btn-normal-inner-border-br-color: #656465;
+    --btn-normal-text-color: #4c4c4c;
+    --btn-normal-inner-hover-color: #218306;
+    --btn-normal-border-hover-color: #fff;
+    --btn-normal-inner-border-lt-hover-color: #17cd07bf;
+    --btn-normal-inner-border-br-hover-color: #004e00;
+    --btn-normal-text-hover-color: #fff;
 }
-
 @font-face {
     font-family: 'Digital-7';
     src: url(./src/Fonts/digital-7.ttf);
     font-style: normal;
     font-weight: 200;
 }
+
+@font-face {
+    font-family: 'MinecraftRegular';
+    src: url('./src/Fonts/Minecraft-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MinecraftTen';
+    src: url('./src/Fonts/Minecraft-Ten.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 *{
     margin: 0;
@@ -19,6 +77,8 @@
 body {
     min-height: 100vh;
     display: flex;
+    background-repeat: no-repeat;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/036/097/098/large_2x/pixel-art-illustration-classroom-background-pixelated-classroom-school-classroom-background-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-vector.jpg)
 }
 
 .container {
@@ -30,12 +90,14 @@ body {
     width: 618px;
     height: 264px;
     border-radius: 8px 8px 0 0;
-    background-color: #abb2a8;
-    border: 30px solid black;
     font-family: 'Digital-7';
-    font-size: 100px;
     position: relative;
     overflow: scroll;
+    background-color: #313233;
+    border: 30px solid #1e1e1f;
+    box-shadow: inset 0 6px #242425;
+    font-family: MinecraftRegular, sans-serif;
+    width: 100%;
 }
 
 .container__display::-webkit-scrollbar{
@@ -56,20 +118,24 @@ body {
     position: relative;
     bottom: 0;
     right: 0;
-    font-family: 'Digital-7', 'Times New Roman', Times, serif;
+    font-family: 'MinecraftRegular', 'Times New Roman', Times, serif;
     overflow-wrap: break-word;
-    color: rgb(53, 53, 134);
+    color: white;
+    font-size: 4.6rem;
+   text-shadow: 2.5px 2.5px 0 rgba(0, 0, 0, .343);
 }
 .container__caculate{
     width: 618px;
     height: 567px;
-    background-color:#dcd6ca;
+    background-color: #48494adf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     border-radius: 0 0 40px 40px;
     padding: 24px;
     display: flex;
     gap: 9px;
     flex-wrap: wrap;
     flex-direction: row;
+    
 }
 
 .number, .operator, .delete, .operator--result{
@@ -77,20 +143,40 @@ body {
     border: none;
     height: 120px;
    font-size: 72px;
-   border-radius: 20px;
+   text-shadow: 2.5px 2.5px 0 rgba(0, 0, 0, .343);
 }
 
 .number {
-   background-color: black;
+   background-color: #3c8527;
    color: white;
    flex-basis: 117px;
+   box-shadow: inset 0 -6px 0 0 #1d4d13,
+   inset 3px 3px 0 #4f913cbf,
+   inset -3px -9px 0 #639d52;
+   font-family: MinecraftTen, sans-serif;
+   font-weight: 700;
+   padding-bottom: 24px;
+   border: 4px solid black;
 }
 .operator, .operator--result {
-    color: white;
-    background-color: #958377;
     flex: 2 0 25%;
     text-align: center;
     line-height: 120px;
+    background-color: var(--btn-tertiary-inner-color);
+    border: 4px solid var(--btn-tertiary-border-color);
+    box-shadow: inset 0 -6px 0 0 var(--btn-tertiary-inner-shadow-color),
+    inset 3px 3px 0 var(--btn-tertiary-inner-border-lt-color), 
+    inset -3px -9px 0 var(--btn-tertiary-inner-border-br-color);
+    color: var(--btn-tertiary-text-color);
+    font-family: MinecraftRegular, sans-serif;
+}
+
+.operator--result {
+    background-color: var(--btn-secondary-inner-color);
+    border: 3px solid var(--btn-secondary-border-color);
+    box-shadow: inset 0 -6px 0 0 var(--btn-secondary-inner-shadow-color), inset 3px 3px 0 var(--btn-secondary-inner-border-lt-color), inset -3px -9px 0 var(--btn-secondary-inner-border-br-color);
+    font-family: MinecraftRegular, sans-serif;
+    padding-bottom: 30px;
 }
 
 .operator--half {
@@ -102,18 +188,26 @@ body {
     border-bottom-right-radius: 40px;
 }
 .delete {
-    border-bottom-left-radius: 40px;
     background-color: #f0b662;
     flex-basis: 117px;
     font-size: 50px;
+    background-color: var(--error-color);
+    border: 4px solid var(--btn-tertiary-border-color);
+    box-shadow: inset 0 -6px 0 0 rgb(197, 29, 29),
+    inset 3px 3px 0 rgb(240, 129, 129), 
+    inset -3px -9px 0 rgba(255, 154, 154, 0.887);
+    color: var(--btn-tertiary-text-color);
+    font-family: MinecraftRegular, sans-serif;
 }
 
 button {
-    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.08s;
 }
 
 .button__active{
-    transform: scale(1.2, 1.2);
-    background-color: rgb(94, 100, 100);
-    box-shadow: rgba(0, 0, 0, 0.16) 7px 10px 0px 0px;
+    box-shadow: inset 0 0 0 0 var(--btn-primary-inner-shadow-color),
+    inset 3px 3px 0 var(--btn-primary-inner-border-lt-color), 
+    inset -3px -3px 0 var(--btn-primary-inner-border-br-color);
+    position: relative;
+    top: 2px;
 }

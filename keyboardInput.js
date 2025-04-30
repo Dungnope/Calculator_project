@@ -88,5 +88,9 @@ window.addEventListener("keydown", (e) => {
         }
         displayCal.appendChild(show);
         deletewrongtype.classList.add("button__active");
+        const audio = document.querySelector(`audio`);
+        if(!audio) return;
+        audio.currentTime = 0;
+        audio.play();
 })
 

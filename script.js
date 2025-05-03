@@ -50,6 +50,11 @@ Button.forEach(e => {
                 operator += e.innerText;
                 show.textContent += e.innerText;
             }
+            if(e.textContent === "-" && first === "")
+            {
+                show.textContent += e.innerText;
+                first += e.innerText;
+            }
         }
         if(e.matches(".delete"))
         {

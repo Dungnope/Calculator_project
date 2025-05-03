@@ -100,6 +100,7 @@ body {
     box-shadow: inset 0 6px #242425;
     font-family: MinecraftRegular, sans-serif;
     width: 100%;
+    text-align: left;
 }
 
 .container__display::-webkit-scrollbar{

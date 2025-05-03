@@ -75,6 +75,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     min-height: 100vh;
     background-repeat: no-repeat;
@@ -84,7 +86,6 @@ body {
 .container {
     width: 618px;
     margin: auto;
-    margin-top: 20px;
 }
 
 .container__display{
@@ -216,14 +217,17 @@ button {
 
 footer {
     font-family: "MinecraftRegular", sans-serif, "Monospace";
-    color: white;
+    color: black;
     margin-top: 20px;
     font-size: 20px;
+    font-weight: 500;
 }
 
 footer span {
     font-family: "MinecraftTen", "Monospace", sans-serif;
+    color:white;
 }
+
 footer a i {
     text-decoration: none;
     font-size: 25px;

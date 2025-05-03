@@ -75,8 +75,8 @@
 }
 
 body {
+    text-align: center;
     min-height: 100vh;
-    display: flex;
     background-repeat: no-repeat;
     background-image: url(https://static.vecteezy.com/system/resources/previews/036/097/098/large_2x/pixel-art-illustration-classroom-background-pixelated-classroom-school-classroom-background-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-vector.jpg)
 }
@@ -84,6 +84,7 @@ body {
 .container {
     width: 618px;
     margin: auto;
+    margin-top: 20px;
 }
 
 .container__display{
@@ -210,4 +211,26 @@ button {
     inset -3px -3px 0 var(--btn-primary-inner-border-br-color);
     position: relative;
     top: 2px;
+}
+
+
+footer {
+    font-family: "MinecraftRegular", sans-serif, "Monospace";
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+footer span {
+    font-family: "MinecraftTen", "Monospace", sans-serif;
+}
+footer a i {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    transition: ease-in 0.25s;
+}
+
+footer a i:hover{
+    transform: rotateY(180deg);
 }

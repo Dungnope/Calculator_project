@@ -70,6 +70,18 @@ window.addEventListener("keydown", (e) => {
                 operator += deletewrongtype.innerText;
                 show.textContent += deletewrongtype.innerText;
             }
+
+            if(deletewrongtype.innerText === "-" && first === "")
+            {
+                show.textContent += deletewrongtype.innerText;
+                first += deletewrongtype.innerText;
+            }
+
+            if(deletewrongtype.innerText === "-" && second === "" && first !== "-")
+                {
+                    show.textContent += deletewrongtype.innerText;
+                    second += deletewrongtype.innerText;
+                }
         }
         if(e.keyCode == "27")
         {

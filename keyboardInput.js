@@ -65,11 +65,6 @@ window.addEventListener("keydown", (e) => {
         if(e.keyCode >= 106 && e.keyCode <= 111 && e.keyCode !== 110)
         {
             error();
-            if(operator === "" && first !== "")
-            {
-                operator += deletewrongtype.innerText;
-                show.textContent += deletewrongtype.innerText;
-            }
 
             if(deletewrongtype.innerText === "-" && first === "")
             {
@@ -77,11 +72,18 @@ window.addEventListener("keydown", (e) => {
                 first += deletewrongtype.innerText;
             }
 
-            if(deletewrongtype.innerText === "-" && second === "" && first !== "-")
-                {
-                    show.textContent += deletewrongtype.innerText;
-                    second += deletewrongtype.innerText;
-                }
+            if(operator === "" && first !== "-")
+            {
+                operator += deletewrongtype.innerText;
+                show.textContent += deletewrongtype.innerText;
+            }
+
+            else if(operator !== "" && second === "")
+            {
+                show.textContent += deletewrongtype.innerText;
+                second += deletewrongtype.innerText;
+            }
+                
         }
         if(e.keyCode == "27")
         {

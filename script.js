@@ -45,16 +45,22 @@ Button.forEach(e => {
         if(e.matches(".operator"))
         {
             error();
-            if(operator === "" && first !== "")
-            {
-                operator += e.innerText;
-                show.textContent += e.innerText;
-            }
-            
+
             if(e.textContent === "-" && first === "")
             {
                 show.textContent += e.innerText;
                 first += e.innerText;
+            }
+
+            if(operator === "" && first !== "-")
+            {
+                operator += e.innerText;
+                show.textContent += e.innerText;
+            }
+            else if(operator !== "" && second === "")
+            {
+                second += e.innerText;
+                show.textContent += e.innerText;
             }
         }
         if(e.matches(".delete"))
